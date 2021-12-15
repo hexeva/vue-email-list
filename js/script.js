@@ -10,21 +10,30 @@
     {
        el: '#root',
         data: {
-            randomMail:'',
-            MailList:[],
+            singleMail:'',
+            mailList:[],
+        },
+        created:function(){
+            for(let i = 0; i<10;i++){
+             this.getRandomMail();
+            }
+           
+           
         },
         methods: {
             getRandomMail:function(){
-                axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-                .then((response) => {
-                    // console.log(response.data.response);
-                    this.randomMail = response.data.response
-                    console.log(this.randomMail);
-                    
-                  
+                    axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                    .then((response) => {
+                        // console.log(response.data.response);
+                        this.singleMail = response.data.response;
+                        console.log(this.singleMail);
+
+                        this.mailList.push(this.singleMail);
+                        console.log(this.mailList);
                 
-            });
-            }
+                });
+            },
+          
         },
         
     }

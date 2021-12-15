@@ -13,17 +13,17 @@
 </head>
 <body>
     <div id="root">
-
-        <ul>
-            <li >ciao</li>
-            <li>{{ randomMail }}</li>
-            <li>{{ randomMail }}</li>
-            <li>{{ randomMail }}</li>
-            <li>{{ randomMail }}</li>
-
-
-        </ul>
         
+        <template v-if="mailList = 10">
+            <ul v-for="mail in mailList">
+            
+                <li>{{ singleMail }}</li>
+    
+            </ul>
+            
+        </template>
+
+       
     </div>
     
     <script type="text/javascript" src="js/script.js"></script>
