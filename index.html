@@ -14,14 +14,14 @@
 <body>
     <div id="root">
         
-        <template v-if="mailList = 10">
-            <ul v-for="mail in mailList">
+        <!-- <template > -->
+            <ul v-if="arrayMail.length === 10" >
             
-                <li>{{ singleMail }}</li>
+                <li v-for="mail in arrayMail">{{mail}}</li>
     
             </ul>
             
-        </template>
+        <!-- </template> -->
 
         
 
@@ -31,3 +31,4 @@
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
+

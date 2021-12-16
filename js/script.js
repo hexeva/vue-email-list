@@ -11,10 +11,10 @@
        el: '#root',
         data: {
             singleMail:'',
-            mailList:[],
+            arrayMail:[],
         },
         created:function(){
-            for(let i = 0; i<10;i++){
+            {
              this.getRandomMail();
             }
            
@@ -22,21 +22,22 @@
         },
         methods: {
             getRandomMail:function(){
+                for(let i = 0; i<10;i++){
                     axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                     .then((response) => {
                         // console.log(response.data.response);
                         this.singleMail = response.data.response;
-                        console.log(this.singleMail);
 
-                        this.mailList.push(this.singleMail);
-                        console.log(this.mailList);
+                        this.arrayMail.push(this.singleMail);
+                        
                 
                 });
+                }
+                
             },
           
         },
         
     }
 );
-
 
